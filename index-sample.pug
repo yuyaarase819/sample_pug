@@ -4,17 +4,25 @@ block title
   title Page Title
 
 block content
-  h1 Page Content
-    section.main__section
-      h2.main__section--Title
-        |1つ目のタイトル
-      .main__section--contents
+  
+  section.main__section
+    h2.main__section--Title
+      |1つ目のセクション
+    .main__section--contents
+      - for (var x = 0; x < 3; x++)
         p.main__section--comment
           |内容
-    section.main__section
-      h2.main__section--Title
-        |2つ目のタイトル
-      .main__section--comment
-        p.main__section--content
-          |内容
-      
+  section.main__section
+    h2.main__section--Title
+      |2つ目のセクション
+    ul.main__section--contents
+      - var list = ["りんご","ばなな","みかん"]
+      each item in list
+        li.main__section--items= item
+  section.main__section
+    h2.main__section--Title
+      |3つ目のセクション
+    .main__section--contents
+      - for (var i = 0; i < 3; i++)
+        p 内容
+  
